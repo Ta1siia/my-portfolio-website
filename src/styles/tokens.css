@@ -1,0 +1,47 @@
+:root {
+  --paper: #f3f0e9;
+  --ink: #14110e;
+  --muted: #6b655c;
+  --signal: #c1440e;
+
+  --font-display: "Azeret Mono", ui-monospace, monospace;
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --step--1: 0.8rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.563rem;
+  --step-3: 1.953rem;
+  --step-4: 2.441rem;
+  --step-5: clamp(2.25rem, 8vw, 5rem);
+
+  --measure: 62ch;
+  --leading-tight: 1.05;
+  --leading-body: 1.6;
+  --tracking-mono: 0.06em;
+  --tracking-display: -0.03em;
+
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2.5rem;
+  --sp-5: 4rem;
+  --sp-6: 6.5rem;
+
+  --radius: 0px;
+  --hairline: 1px solid var(--ink);
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur-base: 240ms;
+  --dur-slow: 520ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}
