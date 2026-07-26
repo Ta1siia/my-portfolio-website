@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <rect width="32" height="32" fill="#c1440e"/>
+    <text
+    x="16"
+    y="21"
+    font-family="'Azeret Mono', ui-monospace, monospace"
+    font-size="14"
+    font-weight="700"
+    fill="#f3f0e9"
+    text-anchor="middle"
+  >t1</text>
+</svg>
