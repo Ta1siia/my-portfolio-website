@@ -24,8 +24,8 @@
 }
 
 .photo {
-  inline-size: 4rem;
-  block-size: 4rem;
+  inline-size: 4.5rem;
+  block-size: 4.5rem;
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
   border-radius: 50%;
@@ -39,7 +39,7 @@
   margin: 0;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-tight);
@@ -95,6 +95,16 @@
   border-block-end: 1px solid var(--signal);
 }
 
+@media (min-width: 22rem) {
+  .photo {
+    inline-size: 5.5rem;
+    block-size: 5.5rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+}
 @media (min-width: 26rem) {
   .top {
     gap: var(--sp-3);
