@@ -1,0 +1,126 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  min-height: 70svh;
+  padding-block: var(--sp-4) var(--sp-6);
+  justify-content: center;
+}
+
+.top {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: var(--sp-4);
+  max-inline-size: 100%;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  min-inline-size: 0;
+  flex: 1 1 auto;
+}
+
+.photo {
+  inline-size: 10rem;
+  block-size: 10rem;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 40% 40%;
+  border: 2px solid var(--signal);
+  padding: 3px;
+}
+
+.name {
+  margin: 0;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+}
+
+.role {
+  margin-block-start: var(--sp-2);
+  margin-block-end: 0;
+  min-height: 1lh;
+  max-inline-size: 100%;
+  overflow-wrap: break-word;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.statement {
+  margin: 0;
+  max-inline-size: var(--measure);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  color: inherit;
+  text-decoration: none;
+}
+
+.links a svg {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  stroke-width: 1.5;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: var(--signal);
+  border-block-end: 1px solid var(--signal);
+}
+
+@media (max-width: 64rem) {
+  .photo {
+    inline-size: 6rem;
+    block-size: 6rem;
+  }
+
+  .name {
+    font-size: 1.9rem;
+  }
+
+  .role {
+    font-size: var(--step-0);
+  }
+}
+
+@media (max-width: 26rem) {
+  .photo {
+    inline-size: 4rem;
+    block-size: 4rem;
+  }
+
+  .name {
+    font-size: 1.1rem;
+  }
+
+  .role {
+    font-size: var(--step--1);
+  }
+}
