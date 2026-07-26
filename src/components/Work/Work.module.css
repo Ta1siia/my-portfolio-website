@@ -19,7 +19,7 @@
 .name {
   margin: 0 0 var(--sp-1);
   font-family: var(--font-display);
-  font-size: var(--step-2);
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: var(--tracking-display);
 }
@@ -28,6 +28,14 @@
   margin: 0 0 var(--sp-2);
   max-inline-size: var(--measure);
   line-height: var(--leading-body);
+}
+
+.notes {
+  margin: 0 0 var(--sp-2);
+  max-inline-size: var(--measure);
+  font-size: var(--step--1);
+  line-height: var(--leading-body);
+  color: var(--muted);
 }
 
 .spec {
@@ -63,6 +71,7 @@
   font-size: var(--step--1);
   letter-spacing: var(--tracking-mono);
 }
+
 .links a {
   display: inline-flex;
   align-items: center;
@@ -80,6 +89,12 @@
 .links a svg {
   inline-size: 1rem;
   block-size: 1rem;
+}
+
+@media (min-width: 26rem) {
+  .name {
+    font-size: var(--step-2);
+  }
 }
 
 @media (min-width: 64rem) {
@@ -114,12 +129,4 @@
   .links {
     grid-area: links;
   }
-}
-
-.notes {
-  margin: 0 0 var(--sp-2);
-  max-inline-size: var(--measure);
-  font-size: var(--step--1);
-  line-height: var(--leading-body);
-  color: var(--muted);
 }

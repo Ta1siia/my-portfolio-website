@@ -2,9 +2,16 @@
   width: 100%;
   border-collapse: collapse;
   margin-block-start: var(--sp-3);
+  display: block;
+}
+
+.table tbody {
+  display: block;
 }
 
 .table tr {
+  display: block;
+  padding-block: var(--sp-2);
   border-block-end: 1px solid color-mix(in oklab, var(--ink) 20%, transparent);
 }
 
@@ -13,11 +20,10 @@
 }
 
 .label {
+  display: block;
   text-align: left;
   vertical-align: top;
-  padding-block: var(--sp-3);
-  padding-inline-end: var(--sp-4);
-  inline-size: 9rem;
+  padding-block-end: var(--sp-1);
   font-family: var(--font-mono);
   font-size: var(--step--1);
   font-weight: 500;
@@ -27,32 +33,34 @@
 }
 
 .items {
-  padding-block: var(--sp-3);
+  display: block;
   font-family: var(--font-body);
   font-size: var(--step-0);
   line-height: var(--leading-body);
   text-align: left;
 }
 
-@media (max-width: 32rem) {
+@media (min-width: 32rem) {
   .table,
   .table tbody,
   .table tr,
-  .table th,
-  .table td {
-    display: block;
+  .label,
+  .items {
+    display: revert;
   }
 
   .table tr {
-    padding-block: var(--sp-2);
+    padding-block: 0;
   }
 
   .label {
-    padding-block-end: var(--sp-1);
-    inline-size: auto;
+    padding-block: var(--sp-3);
+    padding-inline-end: var(--sp-4);
+    padding-block-end: var(--sp-3);
+    inline-size: 9rem;
   }
 
   .items {
-    padding-block-start: 0;
+    padding-block: var(--sp-3);
   }
 }
