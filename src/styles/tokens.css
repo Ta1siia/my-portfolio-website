@@ -36,6 +36,8 @@
   --dur-fast: 120ms;
   --dur-base: 240ms;
   --dur-slow: 520ms;
+
+  --rule-soft: color-mix(in oklab, var(--ink) 20%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

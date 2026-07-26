@@ -1,9 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@fontsource/hanken-grotesk/400.css";
-import "@fontsource/hanken-grotesk/500.css";
-import "@fontsource/azeret-mono/400.css";
-import "@fontsource/azeret-mono/500.css";
+import "@fontsource-variable/hanken-grotesk";
+import "@fontsource-variable/azeret-mono";
 import "./styles/tokens.css";
 import "./styles/reset.css";
 import App from "./components/App/App.tsx";
