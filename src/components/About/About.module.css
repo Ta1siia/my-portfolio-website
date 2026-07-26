@@ -10,9 +10,9 @@
 }
 
 .facts {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-1);
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: var(--sp-1) var(--sp-2);
   margin: 0;
   margin-block-start: var(--sp-4);
   font-family: var(--font-mono);
@@ -21,8 +21,7 @@
 }
 
 .fact {
-  display: flex;
-  gap: var(--sp-1);
+  display: contents;
 }
 
 .fact dt {

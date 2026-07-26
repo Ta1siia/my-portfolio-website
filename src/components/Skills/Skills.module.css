@@ -22,7 +22,6 @@
 .label {
   display: block;
   text-align: left;
-  vertical-align: top;
   padding-block-end: var(--sp-1);
   font-family: var(--font-mono);
   font-size: var(--step--1);
