@@ -1,0 +1,58 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block-start: var(--sp-3);
+}
+
+.table tr {
+  border-block-end: 1px solid color-mix(in oklab, var(--ink) 20%, transparent);
+}
+
+.table tr:first-child {
+  border-block-start: 1px solid color-mix(in oklab, var(--ink) 20%, transparent);
+}
+
+.label {
+  text-align: left;
+  vertical-align: top;
+  padding-block: var(--sp-3);
+  padding-inline-end: var(--sp-4);
+  inline-size: 9rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.items {
+  padding-block: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  text-align: left;
+}
+
+@media (max-width: 32rem) {
+  .table,
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+  }
+
+  .table tr {
+    padding-block: var(--sp-2);
+  }
+
+  .label {
+    padding-block-end: var(--sp-1);
+    inline-size: auto;
+  }
+
+  .items {
+    padding-block-start: 0;
+  }
+}
