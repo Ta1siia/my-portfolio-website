@@ -1,0 +1,31 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding-block-end: var(--sp-2);
+  border-block-end: var(--hairline);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-mono);
+  color: var(--muted);
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+}
+
+.body {
+  padding-block-start: var(--sp-4);
+}
