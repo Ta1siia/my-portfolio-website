@@ -9,7 +9,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
+  scroll-padding-block-start: var(--header-h);
 }
 
 body {
@@ -20,7 +21,7 @@ body {
   line-height: var(--leading-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 img,
 svg {
@@ -69,4 +70,10 @@ a {
 ::selection {
   background: var(--signal);
   color: var(--paper);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

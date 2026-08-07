@@ -37,6 +37,10 @@
   --dur-slow: 520ms;
 
   --rule-soft: color-mix(in oklab, var(--ink) 20%, transparent);
+
+  --gutter: 1.25rem;
+  --container-max: 72rem;
+  --header-h: 3.25rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -44,5 +48,20 @@
     --dur-fast: 0ms;
     --dur-base: 0ms;
     --dur-slow: 0ms;
+
+    --header-h: 4rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --gutter: 2.5rem;
+    --header-h: 4.5rem;
   }
 }
