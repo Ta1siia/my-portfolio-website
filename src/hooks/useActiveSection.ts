@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export function useActiveSection(ids: string[]): string | null {
   const [active, setActive] = useState<string | null>(null);
-  const key = ids.join("|");
-  const visible = useRef(new Map<string, boolean>());
 
   useEffect(() => {
     const elements = ids
@@ -12,24 +10,51 @@ export function useActiveSection(ids: string[]): string | null {
 
     if (elements.length === 0) return;
 
+    const visible = new Map<string, boolean>();
+    let frame = 0;
+
+    const resolve = () => {
+      const { scrollHeight } = document.documentElement;
+      const bottomed = window.innerHeight + window.scrollY >= scrollHeight - 2;
+
+      if (bottomed) {
+        setActive(ids[ids.length - 1]);
+        return;
+      }
+
+      setActive(ids.find((id) => visible.get(id)) ?? null);
+    };
+
+    const schedule = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        resolve();
+      });
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          visible.current.set(entry.target.id, entry.isIntersecting);
+          visible.set(entry.target.id, entry.isIntersecting);
         });
-        const next = ids.find((id) => visible.current.get(id)) ?? null;
-        setActive(next);
+        schedule();
       },
       { rootMargin: "-20% 0px -60% 0px", threshold: 0 },
     );
 
     elements.forEach((el) => observer.observe(el));
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    resolve();
 
     return () => {
       observer.disconnect();
-      visible.current.clear();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (frame) cancelAnimationFrame(frame);
     };
-  }, [key]);
+  }, [ids]);
 
   return active;
 }
