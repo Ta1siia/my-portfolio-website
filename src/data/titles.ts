@@ -1,1 +1,3 @@
-export const TITLES = ["Full-stack developer", "UX/UI designer"];
+import { t } from "../i18n";
+
+export const TITLES = [t.hero.titles.developer, t.hero.titles.designer];

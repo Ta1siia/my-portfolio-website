@@ -1,0 +1,29 @@
+# Taisiia Fedorova
+
+> Full-stack developer and UX/UI designer in Kyiv, Ukraine, who designs and builds web applications end to end, from the data layer to the last state of a hover.
+
+## Role
+
+- Full-stack developer and UX/UI designer
+- High school student in Kyiv, studying full-stack development through GoIT
+- React and TypeScript on the front end, Python and Flask on the back end
+- Open to internships and collaboration
+
+## Projects
+
+- [RepoLens](https://github.com/Ta1siia/repository-lens): renders a public GitHub repository's commit history as an interactive graph, where file size tracks how often a file changes and edges connect files that consistently change together. Clicking a file shows its recent commits with an AI-generated summary. Python, Flask, SQLite, D3.js, Gemini API. Live, 2026. [Demo video](https://www.youtube.com/watch?v=cJgl__tbH_c).
+
+## Languages
+
+- Ukrainian, Russian, English, French
+
+## Links
+
+- [Website](https://taisiia.co/)
+- [GitHub](https://github.com/Ta1siia)
+- [LinkedIn](https://www.linkedin.com/in/taisiia-fedorova)
+- [Behance](https://www.behance.net/taisiiadsgn)
+
+## French version
+
+- [taisiia.co/fr/](https://taisiia.co/fr/): the same site in French

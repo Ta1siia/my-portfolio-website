@@ -67,6 +67,36 @@
   color: var(--signal);
 }
 
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-block-size: 2rem;
+  margin-inline-start: auto;
+  padding-inline: 0.75rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.lang:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.lang:focus-visible {
+  outline: 1px solid var(--signal);
+  outline-offset: 2px;
+}
+
 .toggle {
   display: grid;
   place-items: center;
@@ -161,6 +191,12 @@
 @media (min-width: 64rem) {
   .nav {
     display: block;
+    margin-inline-start: auto;
+  }
+
+  .lang {
+    margin-inline-start: 1.25rem;
+    font-size: 0.8125rem;
   }
 
   .toggle,

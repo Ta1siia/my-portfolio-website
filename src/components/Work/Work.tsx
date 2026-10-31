@@ -2,6 +2,7 @@ import styles from "./Work.module.css";
 import { PROJECTS } from "../../data/projects";
 import GithubIcon from "../../icons/GitHubIcon";
 import YoutubeIcon from "../../icons/YouTubeIcon";
+import { t } from "../../i18n";
 
 export default function Work() {
   return (
@@ -13,19 +14,19 @@ export default function Work() {
           <p className={styles.notes}>{project.notes}</p>
           <dl className={styles.spec}>
             <div className={styles.specRow}>
-              <dt>Role</dt>
+              <dt>{t.work.role}</dt>
               <dd>{project.role}</dd>
             </div>
             <div className={styles.specRow}>
-              <dt>Stack</dt>
+              <dt>{t.work.stack}</dt>
               <dd>{project.stack.join(", ")}</dd>
             </div>
             <div className={styles.specRow}>
-              <dt>Status</dt>
+              <dt>{t.work.status}</dt>
               <dd>{project.status}</dd>
             </div>
             <div className={styles.specRow}>
-              <dt>Year</dt>
+              <dt>{t.work.year}</dt>
               <dd>{project.year}</dd>
             </div>
           </dl>
@@ -38,7 +39,7 @@ export default function Work() {
                   rel="noopener noreferrer"
                 >
                   <GithubIcon size={16} />
-                  <span>Repo</span>
+                  <span>{t.work.repo}</span>
                 </a>
               </li>
             )}
@@ -50,7 +51,7 @@ export default function Work() {
                   rel="noopener noreferrer"
                 >
                   <YoutubeIcon size={16} />
-                  <span>Demo</span>
+                  <span>{t.work.demo}</span>
                 </a>
               </li>
             )}

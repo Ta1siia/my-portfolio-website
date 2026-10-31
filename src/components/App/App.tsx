@@ -6,6 +6,7 @@ import Work from "../Work/Work.tsx";
 import Skills from "../Skills/Skills.tsx";
 import Contact from "../Contact/Contact.tsx";
 import { Header } from "../Header/Header.tsx";
+import { t } from "../../i18n";
 function App() {
   return (
     <>
@@ -13,16 +14,16 @@ function App() {
       <div className={styles.container}>
         <main className={styles.main}>
           <Hero />
-          <Section id="about" number="01" title="About">
+          <Section id="about" number="01" title={t.sections.about}>
             <About />
           </Section>
-          <Section id="work" number="02" title="Work">
+          <Section id="work" number="02" title={t.sections.work}>
             <Work />
           </Section>
-          <Section id="skills" number="03" title="Skills">
+          <Section id="skills" number="03" title={t.sections.skills}>
             <Skills />
           </Section>
-          <Section id="contact" number="04" title="Contact">
+          <Section id="contact" number="04" title={t.sections.contact}>
             <Contact />
           </Section>
         </main>

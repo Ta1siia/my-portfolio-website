@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script>
+      try { if (location.pathname === "/" && localStorage.getItem("lang") === "fr") location.replace("/fr/" + location.search + location.hash); } catch (e) {}
+    </script>
+
     <title>Taisiia Fedorova — Full-Stack Developer & UX/UI Designer</title>
     <meta
       name="description"
@@ -11,6 +15,9 @@
     />
 
     <link rel="canonical" href="https://taisiia.co/" />
+    <link rel="alternate" hreflang="en" href="https://taisiia.co/" />
+    <link rel="alternate" hreflang="fr" href="https://taisiia.co/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://taisiia.co/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://taisiia.co/" />
@@ -30,6 +37,7 @@
       content="Taisiia Fedorova — full-stack developer and UX/UI designer"
     />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_FR" />
     <meta property="og:site_name" content="Taisiia Fedorova" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -48,23 +56,35 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://taisiia.co/#person",
-        "name": "Taisiia Fedorova",
-        "url": "https://taisiia.co/",
-        "image": "https://taisiia.co/og.png",
-        "jobTitle": "Full-Stack Developer & UX/UI Designer",
-        "description": "Taisiia Fedorova — full-stack developer and UX/UI designer in Kyiv.",
-        "knowsLanguage": ["uk", "en", "fr"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Kyiv",
-          "addressCountry": "UA"
-        },
-        "sameAs": [
-          "https://github.com/Ta1siia",
-          "https://www.linkedin.com/in/taisiia-fedorova",
-          "https://www.behance.net/taisiiadsgn"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://taisiia.co/#person",
+            "name": "Taisiia Fedorova",
+            "url": "https://taisiia.co/",
+            "image": "https://taisiia.co/og.png",
+            "jobTitle": "Full-Stack Developer & UX/UI Designer",
+            "description": "Taisiia Fedorova — full-stack developer and UX/UI designer in Kyiv.",
+            "knowsLanguage": ["uk", "ru", "en", "fr"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kyiv",
+              "addressCountry": "UA"
+            },
+            "sameAs": [
+              "https://github.com/Ta1siia",
+              "https://www.linkedin.com/in/taisiia-fedorova",
+              "https://www.behance.net/taisiiadsgn"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://taisiia.co/#website",
+            "url": "https://taisiia.co/",
+            "name": "Taisiia Fedorova",
+            "inLanguage": ["en", "fr"],
+            "author": { "@id": "https://taisiia.co/#person" }
+          }
         ]
       }
     </script>

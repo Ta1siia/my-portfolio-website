@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
 import { navItems } from "../../data/nav";
 import { useActiveSection } from "../../hooks/useActiveSection";
+import { lang, t } from "../../i18n";
+import GlobeIcon from "../../icons/GlobeIcon";
 import styles from "./Header.module.css";
 
 const sectionIds = navItems.map((item) => item.id);
+
+const otherLanguage =
+  lang === "fr" ? { code: "en", href: "/" } : { code: "fr", href: "/fr/" };
+
+const rememberLanguage = (code: string) => {
+  try {
+    localStorage.setItem("lang", code);
+  } catch {
+    return;
+  }
+};
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -74,13 +87,13 @@ export function Header() {
         <a
           className={styles.mark}
           href="#top"
-          aria-label="Back to top"
+          aria-label={t.header.backToTop}
           onClick={goToTop}
         >
           t1
         </a>
 
-        <nav className={styles.nav} aria-label="Sections">
+        <nav className={styles.nav} aria-label={t.header.sections}>
           <ul className={styles.list}>
             {navItems.map((item) => (
               <li key={item.id}>
@@ -98,12 +111,23 @@ export function Header() {
           </ul>
         </nav>
 
+        <a
+          className={styles.lang}
+          href={otherLanguage.href}
+          hrefLang={otherLanguage.code}
+          lang={otherLanguage.code}
+          onClick={() => rememberLanguage(otherLanguage.code)}
+        >
+          <GlobeIcon size={14} />
+          <span>{t.header.otherLanguage}</span>
+        </a>
+
         <button
           type="button"
           className={styles.toggle}
           aria-expanded={open}
           aria-controls="site-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t.header.closeMenu : t.header.openMenu}
           onClick={() => setOpen((value) => !value)}
         >
           <span className={styles.burger} data-open={open} />

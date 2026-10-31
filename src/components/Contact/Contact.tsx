@@ -4,6 +4,7 @@ import styles from "./Contact.module.css";
 import GithubIcon from "../../icons/GitHubIcon";
 import LinkedInIcon from "../../icons/LinkedInIcon";
 import BehanceIcon from "../../icons/BehanceIcon";
+import { lang, t } from "../../i18n";
 
 const EMAIL = "fedorova.taisiia@gmail.com";
 const COPIED_DURATION_MS = 1500;
@@ -15,7 +16,11 @@ const ICONS = {
 };
 
 function formatTime(date: Date) {
-  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  return date.toLocaleTimeString(lang === "fr" ? "fr-FR" : [], {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Europe/Kiev",
+  });
 }
 
 function useLocalTime() {
@@ -52,7 +57,7 @@ export default function Contact() {
   return (
     <div className={styles.contact}>
       <button type="button" className={styles.email} onClick={handleCopy}>
-        <span aria-live="polite">{copied ? "Copied" : EMAIL}</span>
+        <span aria-live="polite">{copied ? t.contact.copied : EMAIL}</span>
       </button>
       <ul className={styles.links}>
         {SOCIAL_LINKS.map(({ label, href, handle }) => {
@@ -69,7 +74,7 @@ export default function Contact() {
       </ul>
       <p className={styles.status}>
         <span className={styles.dot} aria-hidden="true" />
-        Open to internships and collaboration — {localTime} Kyiv
+        {t.contact.status(localTime)}
       </p>
     </div>
   );

@@ -3,6 +3,7 @@ import { SOCIAL_LINKS } from "../../data/socialLinks";
 import styles from "./Hero.module.css";
 import { useCursorWeight } from "../../hooks/useCursorWeight";
 import { TITLES } from "../../data/titles";
+import { t } from "../../i18n";
 import photo from "../../images/my_photo.jpg";
 import LinkedInIcon from "../../icons/LinkedInIcon";
 import GithubIcon from "../../icons/GitHubIcon";
@@ -33,12 +34,9 @@ export default function Hero() {
           </h1>
           <p className={styles.role}>{role}</p>
         </div>
-        <img src={photo} alt="" className={styles.photo} />
+        <img src={photo} alt={t.hero.photoAlt} className={styles.photo} />
       </div>
-      <p className={styles.statement}>
-        I design and build web applications end to end, from the data layer to
-        the last state of a hover.
-      </p>
+      <p className={styles.statement}>{t.hero.statement}</p>
       <ul className={styles.links}>
         {SOCIAL_LINKS.map(({ label, href, handle }) => {
           const Icon = ICONS[label as keyof typeof ICONS];
